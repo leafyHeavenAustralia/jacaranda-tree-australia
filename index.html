@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jacaranda & Flowering Tree Lookup (Australia): Size, Frost, Bloom Season, Litter</title>
+<meta name="description" content="Sortable, filterable reference comparing jacaranda with 15 other flowering trees for Australian gardens, plus a city climate lookup, weed-status check, flowering diagnostic and setback estimator.">
+<style>
+:root{--bg:#f7f8f5;--card:#fff;--ink:#1f2a24;--mute:#5d6b63;--line:#dfe5df;--accent:#5b3f9e;--accent2:#e9e2f7;--good:#2e7d4f;--warn:#b26a00;--bad:#b3261e}
+@media (prefers-color-scheme:dark){:root{--bg:#141a16;--card:#1c2420;--ink:#e8eee9;--mute:#9baba1;--line:#2c3832;--accent:#b79cf0;--accent2:#2a2440;--good:#6fcf97;--warn:#f2b45c;--bad:#f28b82}}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.6rem;margin:0 0 4px}
+h2{font-size:1.15rem;margin:34px 0 8px;padding-top:6px;border-top:2px solid var(--line)}
+.sub{color:var(--mute);margin:0 0 14px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+nav a{padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--accent);text-decoration:none;font-size:.85rem;background:var(--card)}
+.qr{background:var(--accent2);border-left:4px solid var(--accent);padding:12px 14px;border-radius:6px;margin:12px 0}
+.qr ul{margin:6px 0 0;padding-left:18px}
+.controls{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0;align-items:end}
+.controls label{display:flex;flex-direction:column;font-size:.75rem;color:var(--mute);gap:2px}
+input,select{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);min-width:140px}
+button{font:inherit;padding:6px 12px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:760px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;font-size:.88rem}
+th{background:var(--accent2);position:sticky;top:0;white-space:nowrap}
+th.s{cursor:pointer}
+th.s::after{content:" \2195";color:var(--mute);font-size:.75rem}
+th.asc::after{content:" \25B2"}
+th.desc::after{content:" \25BC"}
+tr.hl td{background:var(--accent2)}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:.78rem;border:1px solid var(--line)}
+.g{color:var(--good);border-color:var(--good)}.w{color:var(--warn);border-color:var(--warn)}.r{color:var(--bad);border-color:var(--bad)}
+.count{font-size:.8rem;color:var(--mute);margin:6px 0}
+.est{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.est output{font-weight:700;color:var(--accent)}
+.note{font-size:.8rem;color:var(--mute);margin-top:8px}
+footer{margin-top:36px;padding-top:12px;border-top:2px solid var(--line);font-size:.85rem;color:var(--mute)}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Jacaranda &amp; Flowering Tree Lookup (Australia)</h1>
+<p class="sub">Compare jacaranda against 15 other flowering trees by size, frost tolerance, bloom season and litter. Click any column header to sort.</p>
+
+<nav>
+<a href="#compare">Tree comparison</a>
+<a href="#city">City climate lookup</a>
+<a href="#weed">Weed status</a>
+<a href="#diagnose">No-flowers diagnostic</a>
+<a href="#setback">Setback estimator</a>
+</nav>
+
+<div class="qr">
+<strong>Quick reference: Jacaranda mimosifolia</strong>
+<ul>
+<li>Introduced (South America); naturalised in parts of QLD and NSW. Not an Australian native.</li>
+<li>Mature size 10&ndash;15 m high &times; 8&ndash;12 m wide. No true dwarf form of the standard blue jacaranda.</li>
+<li>Blooms in spring: Sep&ndash;Oct in Brisbane, Oct&ndash;Nov in Sydney/Perth, Nov&ndash;Dec in Adelaide, late Nov&ndash;Dec in Melbourne.</li>
+<li>First flowers: about 2&ndash;3 years (grafted) vs 5&ndash;8+ years (seed-grown).</li>
+<li>Young trees are frost-tender; Melbourne is near the southern practical limit.</li>
+<li>Litter: leaves, flowers and woody pods. Roots spread laterally, so allow space.</li>
+</ul>
+</div>
+
+<h2 id="compare">1. Flowering tree comparison</h2>
+<div class="controls">
+<label>Search<input id="t-q" type="search" placeholder="Name, colour, note..."></label>
+<label>Origin<select id="t-o"><option value="">Any</option><option>Native</option><option>Introduced</option></select></label>
+<label>Max mature height
+<select id="t-h"><option value="">Any</option><option value="6">Up to 6 m</option><option value="8">Up to 8 m</option><option value="10">Up to 10 m</option><option value="15">Up to 15 m</option></select></label>
+<label>Frost tolerance
+<select id="t-f"><option value="">Any</option><option value="3">Hardy only</option><option value="2">Moderate or better</option></select></label>
+<label>Bloom season
+<select id="t-s"><option value="">Any</option><option>Late winter</option><option>Spring</option><option>Summer</option><option>Autumn</option></select></label>
+<label>Litter
+<select id="t-l"><option value="">Any</option><option value="1">Low</option><option value="2">Low&ndash;moderate</option><option value="3">Any (show all)</option></select></label>
+<button id="t-r" type="button">Reset</button>
+</div>
+<div class="count" id="t-c"></div>
+<div class="tablewrap"><table id="trees"><thead></thead><tbody></tbody></table></div>
+<p class="note">Sizes are typical garden ranges; cultivar, soil, climate and pruning change results. Jacaranda row is highlighted. Always check nursery tags and local council guidance before planting.</p>
+
+<h2 id="city">2. Jacaranda city climate lookup</h2>
+<div class="controls">
+<label>Search city<input id="c-q" type="search" placeholder="e.g. Perth"></label>
+<label>Suitability
+<select id="c-s"><option value="">Any</option><option>Strong fit</option><option>Good fit</option><option>Marginal</option><option>Difficult</option></select></label>
+</div>
+<div class="tablewrap"><table id="city"><thead></thead><tbody></tbody></table></div>
+<p class="note">Bloom dates are indicative windows, not guaranteed calendars; they shift with season and local conditions.</p>
+
+<h2 id="weed">3. Weed status check</h2>
+<div class="controls"><label>Search area<input id="w-q" type="search" placeholder="e.g. Brisbane"></label></div>
+<div class="tablewrap"><table id="weed"><thead></thead><tbody></tbody></table></div>
+<p class="note">Naturalised or &ldquo;environmental weed&rdquo; does not automatically mean statewide declared weed. Confirm with your local council or state weed database before buying.</p>
+
+<h2 id="diagnose">4. Why isn&rsquo;t my jacaranda flowering?</h2>
+<div class="controls"><label>Search symptom or cause<input id="d-q" type="search" placeholder="e.g. lush, shade, frost"></label></div>
+<div class="tablewrap"><table id="diag"><thead></thead><tbody></tbody></table></div>
+
+<h2 id="setback">5. Setback estimator</h2>
+<div class="est">
+<label for="sb-h">Expected mature height (m)</label><br>
+<input id="sb-h" type="number" min="1" max="40" step="0.5" value="15">
+<p>Conservative building setback (half mature height): <output id="sb-out">7.5 m</output></p>
+<p>Generic small-tree guidance for comparison: <strong>3 m</strong> from a house.</p>
+<p class="note">These are planning benchmarks, not statutory setbacks. Allow more space near pools, major drains, septic infrastructure and fragile paving, and check council rules and overhead power clearances.</p>
+</div>
+
+<footer>
+Data compiled from and expanded on this guide: <a href="https://leafyheaven.com.au/jacaranda-tree-australia/">jacaranda climate, bloom time and problems guide</a>. Comparison trees use general horticultural ranges and are indicative only.
+</footer>
+</div>
+
+<script>
+(function(){
+var TREES=[
+{n:"Jacaranda",b:"Jacaranda mimosifolia",o:"Introduced",hmin:10,hmax:15,w:"8\u201312 m",col:"Blue-purple",s:["Spring","Summer"],bl:"Spring\u2013early summer",f:"Tender (young)",fr:1,cl:"Warm-temperate to subtropical",lit:"High",lr:3,note:"Leaves, flowers and woody pods; lateral roots. Needs full sun and space.",hl:1},
+{n:"Crepe myrtle",b:"Lagerstroemia indica hybrids",o:"Introduced",hmin:2,hmax:8,w:"2\u20135 m",col:"White, pink, red, purple",s:["Summer"],bl:"Summer\u2013early autumn",f:"Hardy",fr:3,cl:"Cool-temperate to subtropical",lit:"Moderate",lr:2,note:"Deciduous; pick cultivar by mature size."},
+{n:"Saucer magnolia",b:"Magnolia \u00d7 soulangeana",o:"Introduced",hmin:4,hmax:6,w:"3\u20135 m",col:"White to pink-purple",s:["Late winter","Spring"],bl:"Late winter\u2013spring",f:"Hardy",fr:3,cl:"Cool-temperate",lit:"Moderate",lr:2,note:"Petals drop in a short burst; prefers cool winters."},
+{n:"Illawarra flame tree",b:"Brachychiton acerifolius",o:"Native",hmin:10,hmax:20,w:"6\u201310 m",col:"Scarlet",s:["Spring","Summer"],bl:"Spring\u2013summer",f:"Tender (young)",fr:1,cl:"Subtropical to warm-temperate",lit:"High",lr:3,note:"Flowers on a leafless crown; woody pods; large tree."},
+{n:"Poinciana",b:"Delonix regia",o:"Introduced",hmin:8,hmax:12,w:"10\u201315 m",col:"Red-orange",s:["Summer"],bl:"Summer",f:"Tender",fr:1,cl:"Subtropical to tropical",lit:"High",lr:3,note:"Very wide canopy and spreading roots; needs open space."},
+{n:"Frangipani",b:"Plumeria spp.",o:"Introduced",hmin:3,hmax:6,w:"3\u20135 m",col:"White, pink, yellow",s:["Summer"],bl:"Summer",f:"Tender",fr:1,cl:"Subtropical to warm-temperate",lit:"Moderate",lr:2,note:"Leafless in winter; brittle branches; milky sap can irritate skin."},
+{n:"Native frangipani",b:"Hymenosporum flavum",o:"Native",hmin:6,hmax:10,w:"3\u20135 m",col:"Yellow (fragrant)",s:["Spring"],bl:"Spring",f:"Moderate",fr:2,cl:"Subtropical to cool-temperate coastal",lit:"Low",lr:1,note:"Evergreen and fragrant; suits mid-size gardens."},
+{n:"Weeping bottlebrush",b:"Callistemon viminalis",o:"Native",hmin:3,hmax:6,w:"3\u20135 m",col:"Red",s:["Spring","Summer"],bl:"Spring\u2013summer",f:"Moderate",fr:2,cl:"Most climates except harsh frost",lit:"Low",lr:1,note:"Evergreen; attracts nectar-feeding birds."},
+{n:"Tibouchina",b:"Tibouchina spp.",o:"Introduced",hmin:3,hmax:6,w:"2\u20134 m",col:"Purple",s:["Summer","Autumn"],bl:"Summer\u2013autumn",f:"Tender",fr:1,cl:"Subtropical to warm-temperate",lit:"Moderate",lr:2,note:"Needs frost shelter; a compact purple alternative."},
+{n:"Red flowering gum",b:"Corymbia ficifolia",o:"Native",hmin:6,hmax:10,w:"5\u20138 m",col:"Red-orange",s:["Summer"],bl:"Summer",f:"Moderate",fr:2,cl:"Warm to mild temperate",lit:"Moderate",lr:2,note:"Needs good drainage; evergreen."},
+{n:"Tipuana (tipu tree)",b:"Tipuana tipu",o:"Introduced",hmin:12,hmax:20,w:"10\u201315 m",col:"Yellow-orange",s:["Spring","Summer"],bl:"Late spring\u2013summer",f:"Tender (young)",fr:1,cl:"Warm-temperate to subtropical",lit:"High",lr:3,note:"Sometimes called yellow jacaranda; a different species. Check local weed listings."},
+{n:"Flowering cherry",b:"Prunus serrulata",o:"Introduced",hmin:4,hmax:8,w:"4\u20136 m",col:"Pink, white",s:["Spring"],bl:"Spring",f:"Hardy",fr:3,cl:"Cool-temperate",lit:"Moderate",lr:2,note:"Needs cool winters to flower well; weaker in the subtropics."},
+{n:"Flowering dogwood",b:"Cornus florida",o:"Introduced",hmin:4,hmax:6,w:"4\u20136 m",col:"White, pink bracts",s:["Spring"],bl:"Spring",f:"Hardy",fr:3,cl:"Cool-temperate",lit:"Low",lr:1,note:"Prefers cool, moist, acidic soil."},
+{n:"Firewheel tree",b:"Stenocarpus sinuatus",o:"Native",hmin:8,hmax:15,w:"4\u20136 m",col:"Red-orange",s:["Summer","Autumn"],bl:"Late summer\u2013autumn",f:"Tender",fr:1,cl:"Subtropical",lit:"Low",lr:1,note:"Glossy evergreen foliage; narrow crown."},
+{n:"Silky oak",b:"Grevillea robusta",o:"Native",hmin:15,hmax:30,w:"8\u201310 m",col:"Orange-gold",s:["Spring"],bl:"Spring",f:"Moderate",fr:2,cl:"Subtropical to cool-temperate",lit:"High",lr:3,note:"Very large; not for small blocks."}
+];
+var CITY=[
+{c:"Brisbane",s:"Strong fit",fr:"Low",f1:"Sep\u2013Oct",pk:"Oct\u2013Nov",ld:"Late winter\u2013spring",ex:"2\u20133 yrs grafted; 5\u20138+ yrs seed-grown"},
+{c:"Sydney",s:"Strong fit",fr:"Low\u2013moderate",f1:"Oct",pk:"Oct\u2013Nov",ld:"Late winter\u2013spring",ex:"2\u20133 yrs grafted; 5\u20138+ yrs seed-grown"},
+{c:"Perth",s:"Strong fit",fr:"Low (coastal)",f1:"Mid-Oct",pk:"Oct\u2013Nov",ld:"Late winter\u2013spring",ex:"2\u20133 yrs grafted; 5\u20138+ yrs seed-grown"},
+{c:"Adelaide",s:"Good fit (suitable sites)",fr:"Moderate in cold pockets",f1:"Nov",pk:"Nov\u2013Dec",ld:"Late winter\u2013spring",ex:"2\u20133 yrs grafted; 5\u20138+ yrs seed-grown"},
+{c:"Melbourne",s:"Marginal",fr:"Moderate\u2013high (young trees)",f1:"Late Nov",pk:"Late Nov\u2013Dec",ld:"Late winter\u2013spring",ex:"Often slower or less reliable"},
+{c:"Canberra",s:"Difficult",fr:"High",f1:"Late spring, variable",pk:"Variable",ld:"Winter\u2013spring",ex:"Longer and variable"},
+{c:"Tasmania",s:"Difficult",fr:"High",f1:"Unreliable",pk:"Unreliable",ld:"Winter\u2013spring",ex:"Often unreliable"},
+{c:"Inland frost-prone areas",s:"Difficult",fr:"High",f1:"Unreliable",pk:"Unreliable",ld:"Winter\u2013spring",ex:"Highly variable"}
+];
+var WEED=[
+{a:"Queensland",p:"Naturalised; regarded as an environmental weed in parts of the state"},
+{a:"Brisbane City Council",p:"Listed as Council Pest Vegetation"},
+{a:"Ipswich",p:"Environmental weed profile; local booklet says not listed under the Biosecurity Act"},
+{a:"New South Wales",p:"Naturalised; regarded as an environmental weed in parts of NSW"},
+{a:"Victoria",p:"Widely cultivated; no comparable statewide declaration found"},
+{a:"Western Australia",p:"Widely cultivated (especially Perth); no comparable statewide declaration found"},
+{a:"ACT / Tasmania / SA",p:"Check local legal status before planting"}
+];
+var DIAG=[
+{c:"Too young",t:"Vigorous tree, no flowers",x:"Wait; check propagation method",p:"Buy grafted stock if early flowers matter"},
+{c:"Too little sun",t:"Dense green growth, shaded canopy",x:"Move young tree or improve exposure",p:"Plant in full sun"},
+{c:"Frost damage",t:"Blackened or dead new growth",x:"Remove damaged material once growth resumes",p:"Shelter young trees"},
+{c:"Excess nitrogen",t:"Very lush leafy growth",x:"Stop high-nitrogen feeding",p:"Keep lawn fertiliser away from root zone"},
+{c:"Heavy pruning",t:"Many vigorous shoots, few blooms",x:"Allow canopy to recover",p:"Light formative pruning only"},
+{c:"Coastal wind / exposure",t:"Damaged new shoots, poor canopy",x:"Increase shelter",p:"Plant in a protected position"},
+{c:"Waterlogging",t:"Weak growth, yellowing, decline",x:"Improve drainage",p:"Avoid persistently wet soil"}
+];
+
+function el(i){return document.getElementById(i)}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function tag(v,cls){return '<span class="tag '+cls+'">'+esc(v)+'</span>'}
+function sorter(tableId,cols,getRows,render){
+  var st={k:null,d:1};
+  var th=el(tableId).tHead;
+  th.innerHTML='<tr>'+cols.map(function(c,i){return '<th class="'+(c.k?'s':'')+'" data-i="'+i+'">'+c.h+'</th>'}).join('')+'</tr>';
+  th.onclick=function(e){
+    var t=e.target.closest('th');if(!t||!t.classList.contains('s'))return;
+    var c=cols[+t.dataset.i];
+    st.d=(st.k===c.k)?-st.d:1;st.k=c.k;
+    Array.prototype.forEach.call(th.rows[0].cells,function(x){x.classList.remove('asc','desc')});
+    t.classList.add(st.d===1?'asc':'desc');
+    render();
+  };
+  return {sort:function(rows){
+    if(!st.k)return rows;
+    var k=st.k,d=st.d;
+    return rows.slice().sort(function(a,b){var x=a[k],y=b[k];return (x>y?1:x<y?-1:0)*d});
+  }};
+}
+
+/* Trees */
+TREES.forEach(function(t){t.hs=t.hmax;});
+var tCols=[{h:"Tree",k:"n"},{h:"Origin",k:"o"},{h:"Mature height",k:"hs"},{h:"Width"},{h:"Flowers"},{h:"Bloom season"},{h:"Frost tolerance",k:"fr"},{h:"Best climate"},{h:"Litter",k:"lr"},{h:"Notes"}];
+var ts=sorter("trees",tCols,null,drawTrees);
+function drawTrees(){
+  var q=el("t-q").value.toLowerCase(),o=el("t-o").value,h=+el("t-h").value||0,f=+el("t-f").value||0,s=el("t-s").value,l=el("t-l").value;
+  var rows=TREES.filter(function(t){
+    if(q&&(t.n+" "+t.b+" "+t.col+" "+t.note+" "+t.cl).toLowerCase().indexOf(q)<0)return false;
+    if(o&&t.o!==o)return false;
+    if(h&&t.hmax>h)return false;
+    if(f&&t.fr<f)return false;
+    if(s&&t.s.indexOf(s)<0)return false;
+    if(l==="1"&&t.lr>1)return false;
+    if(l==="2"&&t.lr>2)return false;
+    return true;
+  });
+  rows=ts.sort(rows);
+  el("t-c").textContent="Showing "+rows.length+" of "+TREES.length+" trees";
+  el("trees").tBodies[0].innerHTML=rows.length?rows.map(function(t){
+    var fc=t.fr===3?"g":t.fr===2?"w":"r";
+    var lc=t.lr===1?"g":t.lr===2?"w":"r";
+    return '<tr'+(t.hl?' class="hl"':'')+'><td><strong>'+esc(t.n)+'</strong><br><em>'+esc(t.b)+'</em></td><td>'+esc(t.o)+'</td><td>'+t.hmin+'\u2013'+t.hmax+' m</td><td>'+esc(t.w)+'</td><td>'+esc(t.col)+'</td><td>'+esc(t.bl)+'</td><td>'+tag(t.f,fc)+'</td><td>'+esc(t.cl)+'</td><td>'+tag(t.lit,lc)+'</td><td>'+esc(t.note)+'</td></tr>';
+  }).join(""):'<tr><td colspan="10">No trees match these filters.</td></tr>';
+}
+["t-q","t-o","t-h","t-f","t-s","t-l"].forEach(function(i){el(i).addEventListener("input",drawTrees)});
+el("t-r").onclick=function(){["t-q","t-o","t-h","t-f","t-s","t-l"].forEach(function(i){el(i).value=""});drawTrees()};
+drawTrees();
+
+/* City */
+var cs=sorter("city",[{h:"City / region",k:"c"},{h:"Suitability",k:"s"},{h:"Frost risk"},{h:"First flowers"},{h:"Peak"},{h:"Leaf drop"},{h:"First-flower expectation"}],null,drawCity);
+function drawCity(){
+  var q=el("c-q").value.toLowerCase(),s=el("c-s").value;
+  var rows=cs.sort(CITY.filter(function(c){return (!q||c.c.toLowerCase().indexOf(q)>=0)&&(!s||c.s.indexOf(s)===0)}));
+  el("city").tBodies[0].innerHTML=rows.length?rows.map(function(c){
+    var cls=c.s.indexOf("Strong")===0||c.s.indexOf("Good")===0?"g":c.s==="Marginal"?"w":"r";
+    return '<tr><td><strong>'+esc(c.c)+'</strong></td><td>'+tag(c.s,cls)+'</td><td>'+esc(c.fr)+'</td><td>'+esc(c.f1)+'</td><td>'+esc(c.pk)+'</td><td>'+esc(c.ld)+'</td><td>'+esc(c.ex)+'</td></tr>';
+  }).join(""):'<tr><td colspan="7">No matches.</td></tr>';
+}
+["c-q","c-s"].forEach(function(i){el(i).addEventListener("input",drawCity)});
+drawCity();
+
+/* Weed */
+var ws=sorter("weed",[{h:"Area",k:"a"},{h:"Position"}],null,drawWeed);
+function drawWeed(){
+  var q=el("w-q").value.toLowerCase();
+  var rows=ws.sort(WEED.filter(function(w){return !q||(w.a+" "+w.p).toLowerCase().indexOf(q)>=0}));
+  el("weed").tBodies[0].innerHTML=rows.length?rows.map(function(w){return '<tr><td><strong>'+esc(w.a)+'</strong></td><td>'+esc(w.p)+'</td></tr>'}).join(""):'<tr><td colspan="2">No matches.</td></tr>';
+}
+el("w-q").addEventListener("input",drawWeed);drawWeed();
+
+/* Diagnostic */
+var ds=sorter("diag",[{h:"Cause",k:"c"},{h:"How to tell"},{h:"Fix"},{h:"Prevention"}],null,drawDiag);
+function drawDiag(){
+  var q=el("d-q").value.toLowerCase();
+  var rows=ds.sort(DIAG.filter(function(d){return !q||(d.c+" "+d.t+" "+d.x+" "+d.p).toLowerCase().indexOf(q)>=0}));
+  el("diag").tBodies[0].innerHTML=rows.length?rows.map(function(d){return '<tr><td><strong>'+esc(d.c)+'</strong></td><td>'+esc(d.t)+'</td><td>'+esc(d.x)+'</td><td>'+esc(d.p)+'</td></tr>'}).join(""):'<tr><td colspan="4">No matches.</td></tr>';
+}
+el("d-q").addEventListener("input",drawDiag);drawDiag();
+
+/* Setback */
+function sb(){var v=parseFloat(el("sb-h").value);el("sb-out").textContent=isFinite(v)&&v>0?(Math.round(v/2*10)/10)+" m":"\u2013"}
+el("sb-h").addEventListener("input",sb);sb();
+})();
+</script>
+</body>
+</html>
